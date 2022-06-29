@@ -118,4 +118,4 @@ fi
 export PATH=~/.local/bin:$PATH
 
 # enable oh-my-posh
-eval "$(oh-my-posh init bash)"
+if [ "${OMP_ENABLE:-1}" = "1" ]; then  eval "$(oh-my-posh init bash)"; fi
