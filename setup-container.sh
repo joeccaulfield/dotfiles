@@ -1,11 +1,23 @@
 #!/bin/bash
 
-# Install oh-my-posh and themes if not already installed
-[command -v oh-my-posh >/dev/null 2>&1] || ./programs/oh-my-posh.sh
-[-d "~/.poshthemes"] || ./programs/oh-my-posh-themes.sh
+# Install Oh My Posh (https://ohmyposh.dev/)
+# Requires use of a Nerd Font (https://www.nerdfonts.com/) for themes other than minimal themes
+# To enable add the following to ~/.bashrc (replace default.omp.json with theme of choice):
+# eval "$(oh-my-posh init bash --config ~/.poshthemes/default.omp.json)" 
+# For other shells see (https://ohmyposh.dev/docs/installation/prompt) for further instructions
+sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
+sudo chmod +x /usr/local/bin/oh-my-posh
+# Download the themes
+mkdir ~/.poshthemes
+wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip -O ~/.poshthemes/themes.zip
+unzip ~/.poshthemes/themes.zip -d ~/.poshthemes
+chmod u+rw ~/.poshthemes/*.omp.*
+rm -f ~/.poshthemes/themes.zip
 
 # Create symlinks
-./symlink.sh
+ln -r -s ~/.bashrc ~/.dotfiles/.bashrc
+ln -r -s ~/.bashrc ~/.dotfiles/.gitconfig
+ln -r -s ~/.bashrc ~/.dotfiles/.profile
 
 # See our bash changes
 source ~/.bashrc
