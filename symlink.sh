@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Up from scripts dir
-cd ..
 
 dotfilesDir=$(pwd)
 
@@ -26,7 +25,7 @@ function linkDotfile {
   fi
 
   echo "Creating new symlink: ${dest}"
-  ln -s ${dotfilesDir}/${1} ${dest}
+  ln -r -s ${1} ${dest}
 }
 
 linkDotfile .bashrc
