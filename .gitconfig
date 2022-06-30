@@ -1,5 +1,3 @@
 [user]
 	email = caulfield@theinstitutes.org
 	name = Joe Caulfield
-[credential]
-	helper = "!f() { /localhost/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/node /tmp/vscode-remote-containers-425fb307796c7becada68a4ccaa85e7d7b513858.js $*; }; f"
