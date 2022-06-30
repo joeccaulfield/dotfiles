@@ -15,9 +15,9 @@ chmod u+rw ~/.poshthemes/*.omp.*
 rm -f ~/.poshthemes/themes.zip
 
 # Create symlinks
-ln -r -s ~/.bashrc ~/.dotfiles/.bashrc
-ln -r -s ~/.bashrc ~/.dotfiles/.gitconfig
-ln -r -s ~/.bashrc ~/.dotfiles/.profile
+rm -f ~/.bashrc || ln -r -s ~/.dotfiles/.bashrc ~/.bashrc
+rm -f ~/.profile || ln -r -s ~/.dotfiles/.bashrc ~/.gitconfig
+rm -f ~/.bashrc || ln -r -s ~/.dotfiles/.bashrc ~/.profile
 
 # See our bash changes
 source ~/.bashrc
