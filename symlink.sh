@@ -6,6 +6,7 @@ dotfilesDir=$(pwd)
 
 function linkDotfile {
   dest="${HOME}/${1}"
+  target="${dotfilesDir}/${1}"
   dateStr=$(date +%Y-%m-%d-%H%M)
 
   if [ -h ~/${1} ]; then
@@ -25,7 +26,7 @@ function linkDotfile {
   fi
 
   echo "Creating new symlink: ${dest}"
-  ln -r -s ${1} ${dest}
+  ln -r -s ${target} ${dest}
 }
 
 linkDotfile .bashrc
