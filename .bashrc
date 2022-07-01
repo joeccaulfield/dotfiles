@@ -118,4 +118,4 @@ fi
 export PATH=~/.local/bin:$PATH
 
 # enable oh-my-posh
-if [ "${OMP_ENABLE:-1}" = "1" ]; then  eval "$(oh-my-posh init bash)"; fi
+if [ "${OMP_ENABLE:-1}" = "1" ]; then  eval "$(oh-my-posh init bash --config ~/.poshthemes/atomic.omp.json)"; fi
