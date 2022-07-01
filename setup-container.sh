@@ -16,8 +16,8 @@ rm -f ~/.poshthemes/themes.zip
 
 # Create symlinks
 ln -r -sf ~/.dotfiles/.bashrc ~/.bashrc
-ln -r -sf ~/.dotfiles/.bashrc ~/.gitconfig
-ln -r -sf ~/.dotfiles/.bashrc ~/.profile
+ln -r -sf ~/.dotfiles/.gitconfig ~/.gitconfig
+ln -r -sf ~/.dotfiles/.profile ~/.profile
 
 # See our bash changes
 source ~/.bashrc
