@@ -1,3 +1,5 @@
 [user]
 	email = caulfield@theinstitutes.org
 	name = Joe Caulfield
+[safe]
+	directory = %(prefix)///wsl$/Debian/home/caulfield/omni
