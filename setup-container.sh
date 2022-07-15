@@ -5,11 +5,12 @@
 # To enable add the following to ~/.bashrc (replace default.omp.json with theme of choice):
 # eval "$(oh-my-posh init bash --config ~/.poshthemes/default.omp.json)" 
 # For other shells see (https://ohmyposh.dev/docs/installation/prompt) for further instructions
-sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
+sudo apt-get install -qq wget unzip
+sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -Oq /usr/local/bin/oh-my-posh
 sudo chmod +x /usr/local/bin/oh-my-posh
 # Download the themes
 mkdir ~/.poshthemes
-wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip -O ~/.poshthemes/themes.zip
+wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip -Oq ~/.poshthemes/themes.zip
 unzip -oq ~/.poshthemes/themes.zip -d ~/.poshthemes
 chmod u+rw ~/.poshthemes/*.omp.*
 rm -f ~/.poshthemes/themes.zip
