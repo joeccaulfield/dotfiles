@@ -112,6 +112,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# export variables from .env file (create it if it does not exist)
+test -f .env || touch .env
+export $(grep -v '^#' .env | xargs -d '\n')
+
 #===================================================================
 
 # Add to PATH

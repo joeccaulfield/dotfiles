@@ -30,5 +30,6 @@ function linkDotfile {
 }
 
 linkDotfile .bashrc
+linkDotfile .bash_aliases
 linkDotfile .gitconfig
 linkDotfile .profile
