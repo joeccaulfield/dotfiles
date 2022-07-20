@@ -3,3 +3,5 @@
 	name = Joe Caulfield
 [safe]
 	directory = %(prefix)///wsl$/Debian/home/caulfield/omni
+[credential]
+	helper = "!f() { /localhost/.vscode-server/bin/3b889b090b5ad5793f524b5d1d39fda662b96a2a/node /tmp/vscode-remote-containers-b065d63022696b9d4bad096edd36546e42d9ae3f.js $*; }; f"
