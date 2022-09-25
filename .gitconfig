@@ -1,7 +1,43 @@
 [user]
 	email = caulfield@theinstitutes.org
 	name = Joe Caulfield
-[safe]
-	directory = %(prefix)///wsl$/Debian/home/caulfield/omni
 [credential]
 	helper = "!f() { /localhost/.vscode-server/bin/3b889b090b5ad5793f524b5d1d39fda662b96a2a/node /tmp/vscode-remote-containers-b065d63022696b9d4bad096edd36546e42d9ae3f.js $*; }; f"
+[init]
+	defaultBranch = main
+[alias]
+	dub = "!f() { git remote prune origin; git branch | xargs git branch -d; }; f"
+    undo = !git reset --soft HEAD^ && git push origin +HEAD
+	usl = !git reset --soft HEAD^
+	co = checkout
+	cob = checkout -b
+	coo = !git fetch && git checkout
+	br = branch
+	brd = branch -d
+	brD = branch -D
+	merged = branch --merged
+	st = status
+	aa = add -A .
+	cm = commit -m
+	aacm = !git add -A . && git commit
+	aacm = !git add -A . && git commit -m
+	cp = cherry-pick
+	amend = commit --amend -m
+	develop = !git checkout develop && git pull origin develop
+	main = !git checkout main && git pull origin 
+	master = !git checkout master && git pull origin 
+	po = push origin
+	pu = !git push origin `git branch --show-current`
+	pod = push origin develop
+	pom = push origin main
+	poh = push origin HEAD
+	plo = pull origin
+	plod = pull origin develop
+	plom = pull origin main
+	ploh = pull origin HEAD
+	unstage = reset --soft HEAD^
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	f = "!git ls-files | grep -i"
+	gr = grep -Ii
+	la = "!git config -l | grep alias | cut -c 7-"
