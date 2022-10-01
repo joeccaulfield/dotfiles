@@ -128,3 +128,10 @@ if [ "${OMP_ENABLE:-1}" = "1" ]; then  eval "$(oh-my-posh init bash --config ~/.
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+testregex() {
+  [ "$#" -eq 1 ] || return 1
+  while IFS= read -r line; do
+    printf '%s\n' "$1" | grep -Eoe "$line"
+  done
+}

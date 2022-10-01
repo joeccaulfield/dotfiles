@@ -5,7 +5,7 @@
 	defaultBranch = main
 [alias]
 	dub = "!f() { git remote prune origin; git branch | xargs git branch -d; }; f"
-    undo = !git reset --soft HEAD^ && git push origin +HEAD
+	undo = !git reset --soft HEAD^ && git push origin +HEAD
 	usl = !git reset --soft HEAD^
 	co = checkout
 	cob = checkout -b
