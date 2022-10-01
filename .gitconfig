@@ -19,6 +19,7 @@
 	cm = commit -m
 	aacm = !git add -A . && git commit
 	aacm = !git add -A . && git commit -m
+	addscr = !sh -c 'if [[ ${0: -3} == ".sh" ]]; then git update-index --chmod=+x $0; git add $0'
 	cp = cherry-pick
 	amend = commit --amend -m
 	develop = !git checkout develop && git pull origin develop
@@ -39,3 +40,5 @@
 	f = "!git ls-files | grep -i"
 	gr = grep -Ii
 	la = "!git config -l | grep alias | cut -c 7-"
+[credential]
+	helper = cache --timeout 3600
