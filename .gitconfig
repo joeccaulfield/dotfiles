@@ -4,7 +4,8 @@
 [init]
 	defaultBranch = main
 [alias]
-	dub = "!f() { git remote prune origin; git branch | xargs git branch -d; }; f"
+	dub = "!f() { git remote prune origin; git branch | grepxargs git branch -d; }; f"
+	dmb = !git branch --merged $([[ $1 != "-f" ]] && git rev-parse develop) | grep -Ev "(^\\*|^\\s*(master|main|develop)$)" | xargs git branch -d
 	undo = !git reset --soft HEAD^ && git push origin +HEAD
 	usl = !git reset --soft HEAD^
 	co = checkout
