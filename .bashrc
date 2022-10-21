@@ -117,6 +117,8 @@ fi
 # export $(grep -v '^#' .env | xargs -d '\n')
 
 #===================================================================
+# Set WIN_HOME if using WSL. Use WIN_USER for windows user or USER if not set
+if [ "${WSL_DISTRO_NAME:-0}" != "0" ]; then export WIN_HOME="/mnt/c/Users/${WIN_USER:-USER}"; fi
 
 # Add to PATH
 export PATH=~/.local/bin:$PATH
