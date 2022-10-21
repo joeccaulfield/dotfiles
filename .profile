@@ -23,5 +23,5 @@ fi
 
 # Add go to path
 if [ -d "/usr/local/go/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
+    PATH="/usr/local/go/bin:$PATH"
 fi
