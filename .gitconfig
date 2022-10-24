@@ -19,8 +19,10 @@
 	st = status
 	aa = add -A .
 	cm = commit -m
+	csm = commit -S -m
 	aacm = !git add -A . && git commit
 	aacm = !git add -A . && git commit -m
+	aacsm = !git add -A . && git commit -S -m
 	addscr = !sh -c 'if [[ ${0: -3} == ".sh" ]]; then git update-index --chmod=+x $0; git add $0'
 	cp = cherry-pick
 	amend = commit --amend -m
