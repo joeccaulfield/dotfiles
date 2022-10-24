@@ -1,6 +1,7 @@
 [user]
 	email = caulfield@theinstitutes.org
 	name = Joe Caulfield
+	signingkey = 803E4AC88B62EA4E
 [init]
 	defaultBranch = main
 [alias]

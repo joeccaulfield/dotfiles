@@ -117,8 +117,11 @@ fi
 # export $(grep -v '^#' .env | xargs -d '\n')
 
 #===================================================================
-# Set WIN_HOME if using WSL. Use WIN_USER for windows user or USER if not set
-if [ "${WSL_DISTRO_NAME:-0}" != "0" ]; then export WIN_HOME="/mnt/c/Users/${WIN_USER:-$USER}"; fi
+# Set AWS Config vars to Windows home if using WSL. Use WIN_USER for windows user or USER if not set
+if [ "${WSL_DISTRO_NAME:-0}" != "0" ]; then 
+    export AWS_CONFIG_FILE="${AWS_CONFIG_FILE:-/mnt/c/Users/${WIN_USER:-$USER}/.aws/config}"; 
+    export AWS_SHARED_CREDENTIALS_FILE="${AWS_SHARED_CREDENTIALS_FILE:-/mnt/c/Users/${WIN_USER:-$USER}/.aws/credentials}"; 
+fi
 
 # Add to PATH
 export PATH=~/.local/bin:$PATH
