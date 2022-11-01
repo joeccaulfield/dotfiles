@@ -6,7 +6,6 @@
 	defaultBranch = main
 [alias]
 	dub = "!f() { git remote prune origin; git branch | grepxargs git branch -d; }; f"
-	dmb = '!git branch --merged $([[ $1 != \"-f\" ]] && git rev-parse develop) | grep -Ev \"(^\\*|^\\s*(master|main|develop)$)\" | xargs git branch -d'
 	undo = !git reset --soft HEAD^ && git push origin +HEAD
 	usl = !git reset --soft HEAD^
 	co = checkout
@@ -23,7 +22,7 @@
 	aacm = !git add -A . && git commit
 	aacm = !git add -A . && git commit -m
 	aacsm = !git add -A . && git commit -S -m
-	addscr = !sh -c 'if [[ ${0: -3} == ".sh" ]]; then git update-index --chmod=+x $0; git add $0'
+	addscr = add --chmod=+x
 	cp = cherry-pick
 	amend = commit --amend -m
 	develop = !git checkout develop && git pull origin develop
@@ -38,7 +37,6 @@
 	plod = pull origin develop
 	plom = pull origin main
 	ploh = pull origin HEAD
-	smb = '!git branch --merged $([[ $1 != \"-f\" ]] && git rev-parse develop) | grep -Ev \"(^\\*|^\\s*(master|main|develop)$)\"'
 	unstage = reset --soft HEAD^
 	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
