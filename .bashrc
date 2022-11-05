@@ -113,8 +113,8 @@ if ! shopt -oq posix; then
 fi
 
 # # export variables from .env file (create it if it does not exist)
-# test -f .env || touch .env
-# export $(grep -v '^#' .env | xargs -d '\n')
+test -f ~/.env || touch ~/.env
+export $(grep -v '^#' ~/.env | xargs -d '\n')
 
 #===================================================================
 # Set AWS Config vars to Windows home if using WSL. Use WIN_USER for windows user or USER if not set
