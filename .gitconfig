@@ -11,6 +11,7 @@
 	co = checkout
 	cob = checkout -b
 	coo = !git fetch && git checkout
+	sb = branch --show-current
 	br = branch
 	brd = branch -d
 	brD = branch -D
