@@ -15,11 +15,11 @@ unzip -q -o ~/.poshthemes/themes.zip -d ~/.poshthemes
 chmod u+rw ~/.poshthemes/*.omp.*
 rm -f ~/.poshthemes/themes.zip
 
-# Install Homebrew (https://brew.sh/)
-NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# # Install Homebrew (https://brew.sh/)
+# NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# Install tmux and fzf
-brew install tmux fzf
+# # Install tmux and fzf
+# brew install tmux fzf fd
 
 # Create symlinks
 ln -r -sf ~/.dotfiles/.bashrc ~/.bashrc
